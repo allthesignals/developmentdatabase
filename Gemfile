@@ -5,28 +5,30 @@ ruby '2.1.5'
 gem 'rails', '4.2.1'
 
 # Database
-gem 'pg'
+gem 'pg',     '~> 0.18'
 gem 'seed-fu', '~> 2.3'     # Manages fixtures
 gem 'faker', require: false # Fake sample data
 
-# Users
-gem 'bcrypt'
-gem 'devise'
+# Users & Permissions
+gem 'bcrypt',    '~> 3.1'
+gem 'devise',    '~> 3.5.0'
+gem 'authority', '~> 3.1.0'
+gem 'rolify',    '~> 5.0.0'
 
 # Utilities
-gem 'enumerize'
-gem 'geometry'
+gem 'enumerize', '~> 1.1.0'
+gem 'geometry',  '~> 6.5'
 gem 'wannabe_bool', '0.3.0'
 
 # Presenters
-gem 'burgundy' # Presenter
-gem 'escape_utils' # speeds up URI Template
-gem 'uri_template'
+gem 'burgundy',     '~> 0.2.0' # Presenter
+gem 'escape_utils', '~> 1.1.0' # speeds up URI Template
+gem 'uri_template', '~> 0.7.0'
 
 # Views
-gem 'haml-rails'
-gem 'sass-rails'
-gem 'coffee-rails'
+gem 'haml-rails',   '~> 0.9'
+gem 'sass-rails',   '~> 5.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0' # Compress JavaScript
@@ -35,31 +37,31 @@ gem 'kaminari'  # Pagination
 # Semantic UI
 gem 'therubyracer'
 gem 'less-rails-semantic_ui', '~> 2.1'
-gem 'autoprefixer-rails', '~> 5.2.1.2'
+gem 'autoprefixer-rails', '~> 5.2.1.0'
 
 gem 'paperclip' # File attachments
 
 # API
-gem 'jsonapi-resources' # JSON API standard
-gem 'api-pagination'    # Paginates API in headers
+gem 'jsonapi-resources', '~> 0.7.0' # JSON API standard
+gem 'api-pagination',    '~> 4.2' # Paginates API in headers
 
 # Server
-gem 'puma'
+gem 'puma', '~> 2.15'
 gem 'foreman', require: false
 
-gem 'bullet', group: [:development, :test]
+gem 'bullet', '4.14.10', group: [:development, :test]
 
 group :development do
-  gem 'spring'            # Keeps environment in background
-  gem 'better_errors'     # Clearer error messages
-  gem 'binding_of_caller' # REPL & more in error page
-  gem 'byebug'            # Debugger
+  gem 'spring', '~> 1.6.0' # Keeps environment in background
+  gem 'better_errors'      # Clearer error messages
+  gem 'binding_of_caller'  # REPL & more in error page
+  gem 'byebug'             # Debugger
   gem 'web-console', '~> 2.0'
-  gem 'guard', '>= 2.2.2',       require: false # Autorun tests
+  gem 'guard',       '~> 2.2.0', require: false # Autorun tests
   gem 'guard-minitest',          require: false # MiniTest adapter
   # Watch Mac filesystem events
-  gem 'rb-fsevent', require: RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'
-  gem 'brakeman', require: false # Assess security
+  gem 'rb-fsevent', '~> 0.9.0', require: RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'
+  gem 'brakeman',   '~> 3.1.0', require: false # Assess security
 end
 
 group :test do
