@@ -1,4 +1,6 @@
 class Organization < ActiveRecord::Base
+  include Authority::Abilities
+
   has_many :memberships
   has_many :members, through: :memberships, source: :user
   has_many :administrators, class_name: :User
@@ -7,7 +9,7 @@ class Organization < ActiveRecord::Base
 
   # this should be scoped for unique, but our Postgres version cannot
   # select distinct on tables with JSON data types.
-  has_many :developments, through: :development_team_memberships 
+  has_many :developments, through: :development_team_memberships
   belongs_to :creator,      class_name: :User
 
   validates :name,       presence: true

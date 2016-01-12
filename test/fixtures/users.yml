@@ -4,6 +4,12 @@ normal:
   first_name: Matt
   last_name: Cloyd
 
+admin:
+  email: jpartridge@mapc.org
+  encrypted_password: <%= BCrypt::Password.create("imanadmin", cost: 1) %>
+  first_name: Jessie
+  last_name: Partridge
+
 moderator:
   email: planner@boston.ma
   encrypted_password: <%= BCrypt::Password.create("secretplans", cost: 1) %>
