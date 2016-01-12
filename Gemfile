@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 gem 'rails', '4.2.1'
+gem 'sprockets-rails', '~> 2.3'
 
 # Database
 gem 'pg',     '~> 0.18'
@@ -57,19 +58,19 @@ group :development do
   gem 'binding_of_caller'  # REPL & more in error page
   gem 'byebug'             # Debugger
   gem 'web-console', '~> 2.0'
-  gem 'guard',       '~> 2.2.0', require: false # Autorun tests
-  gem 'guard-minitest',          require: false # MiniTest adapter
+  gem 'guard',       '~> 2.13', require: false # Autorun tests
+  gem 'guard-minitest',         require: false # MiniTest adapter
   # Watch Mac filesystem events
   gem 'rb-fsevent', '~> 0.9.0', require: RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'
   gem 'brakeman',   '~> 3.1.0', require: false # Assess security
 end
 
 group :test do
-  gem 'minitest-rails'     # Test library
+  gem 'minitest-rails'          # Test library
   gem 'minitest-rails-capybara' # Integration tests
-  gem 'minitest-reporters' # For progress bar, etc.
-  gem 'minitest-fail-fast' # End testing on first failure
-  gem 'minitest-focus'     # One test at a time
+  gem 'minitest-reporters'      # For progress bar, etc.
+  gem 'minitest-fail-fast'      # End testing on first failure
+  gem 'minitest-focus'          # One test at a time
   gem 'codeclimate-test-reporter', require: nil
   gem 'launchy'
   gem 'rake' # Specified for Travis CI
