@@ -9,9 +9,6 @@ class OrganizationAuthorizer < ApplicationAuthorizer
   end
 
   def updatable_by?(user)
+    user.has_role? :admin, resource
   end
-
-  def deletable_by?(user)
-  end
-
 end

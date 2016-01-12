@@ -31,4 +31,8 @@ class OrganizationAuthorizerTest < ActiveSupport::TestCase
     assert org.authorizer.updatable_by?(admin_user)
   end
 
+  test 'no one can delete organizations' do
+    refute org.authorizer.deletable_by?(user)
+    refute org.authorizer.deletable_by?(admin_user)
+  end
 end
