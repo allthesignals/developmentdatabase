@@ -1,5 +1,7 @@
 class MembershipsController < ApplicationController
 
+  authorize_actions_for Membership, actions: { deactivate: :update, join: :create }
+
   def join
     @organization = Organization.find membership_params[:id]
     membership = @organization.memberships.new(user: current_user)
